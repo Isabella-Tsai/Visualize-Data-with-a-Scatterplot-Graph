@@ -133,12 +133,10 @@ let generateAxes = () => {
 }
 
 req.open('GET', url, true)
-
+req.send()
 req.onload = () =>{
     values = JSON.parse(req.responseText)
     generateScale()
     drawPoints()
     generateAxes()
 }
-
-req.send()
